@@ -21,9 +21,12 @@ class GradientContainer extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              'assets/images/quiz-logo.png',
-              width: 300,
+            Opacity(
+              opacity: 0.6,
+              child: Image.asset(
+                'assets/images/quiz-logo.png',
+                width: 300,
+              ),
             ),
             const SizedBox(height: 80),
             const Text(
@@ -31,12 +34,13 @@ class GradientContainer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 28),
             ),
             const SizedBox(height: 30),
-            OutlinedButton(
+            OutlinedButton.icon(
               onPressed: () {},
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Start Quiz'),
+              icon: const Icon(Icons.arrow_right_alt),
+              label: const Text('Start Quiz'),
             ),
           ],
         ),
